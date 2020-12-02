@@ -1,6 +1,6 @@
-package controllerview.first;
+package controllerview.login;
 
-import controllerview.second.SecondC;
+import controllerview.eightBall.EightBallController;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
@@ -12,16 +12,20 @@ import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
-public class FirstC implements Initializable {
+/**
+ * @author Simon Sperr
+ * @version 2020.1.1, 02.12.2020
+ **/
+public class LoginController implements Initializable {
   private Stage stage;
   
   public static void show(Stage stage) {
     try {
-      FXMLLoader fxmlLoader = new FXMLLoader(FirstC.class.getResource("firstV.fxml"));
+      FXMLLoader fxmlLoader = new FXMLLoader(LoginController.class.getResource("loginView.fxml"));
       Parent root = fxmlLoader.load();
       
       //get controller which is connected to this fxml file
-      FirstC ctrl = fxmlLoader.getController();
+      LoginController ctrl = fxmlLoader.getController();
       ctrl.stage = stage;
       
       stage.setTitle("Welcome");
@@ -29,7 +33,7 @@ public class FirstC implements Initializable {
       stage.show();
     }
     catch (IOException e) {
-      System.err.println("Something wrong with firstV.fxml: " + e.getMessage());
+      System.err.println("Something wrong with loginView.fxml: " + e.getMessage());
       e.printStackTrace(System.err);
     }
   }
@@ -43,7 +47,7 @@ public class FirstC implements Initializable {
     //navigate from welcome screen to main screen
     System.out.println("Navigation started ...");
    
-    SecondC.show(new Stage(),"Hello from Welcome Controller!");
+    EightBallController.show(new Stage(),"Hello from Welcome Controller!");
     stage.close();
     }
 }

@@ -1,17 +1,18 @@
 package main;
 
-import controllerview.first.FirstC;
+import controllerview.login.LoginController;
 import javafx.application.Application;
-import javafx.fxml.FXMLLoader;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
 import javafx.stage.Stage;
 
+/**
+ * @author Simon Sperr
+ * @version 2020.1.1, 02.12.2020
+ **/
 public class TheMain extends Application {
 
     @Override
     public void start(Stage primaryStage) throws Exception{
-        FirstC.show(primaryStage);
+        LoginController.show(primaryStage);
     }
 
 

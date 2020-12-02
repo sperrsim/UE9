@@ -1,4 +1,4 @@
-package controllerview.second;
+package controllerview.eightBall;
 
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
@@ -9,17 +9,21 @@ import javafx.stage.Stage;
 import java.net.URL;
 import java.util.ResourceBundle;
 
-public class SecondC implements Initializable {
+/**
+ * @author Simon Sperr
+ * @version 2020.1.1, 02.12.2020
+ **/
+public class EightBallController implements Initializable {
   
   private String myData = "";
   
   public static void show(Stage stage, String greeting) {
     try {
-      FXMLLoader fxmlLoader = new FXMLLoader(SecondC.class.getResource("secondV.fxml"));
+      FXMLLoader fxmlLoader = new FXMLLoader(EightBallController.class.getResource("eightBallView.fxml"));
       Parent root = fxmlLoader.load();
       
       //send data to MainController
-      SecondC ctrl = fxmlLoader.getController();
+      EightBallController ctrl = fxmlLoader.getController();
       ctrl.setMyData(greeting);
       
       stage.setTitle("Second");
@@ -27,7 +31,7 @@ public class SecondC implements Initializable {
       stage.show();
     }
     catch (Exception e) {
-      System.err.println("Something wrong with secondV.fxml: " + e.getMessage());
+      System.err.println("Something wrong with eightBallView.fxml: " + e.getMessage());
       e.printStackTrace(System.err);
     }
   }
