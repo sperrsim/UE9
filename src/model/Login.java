@@ -1,7 +1,5 @@
 package model;
 
-import java.util.Objects;
-
 /**
  * @author Simon Sperr
  * @version 2020.1.1, 02.12.2020
@@ -23,11 +21,6 @@ public class Login {
         Login login = (Login)o;
         return this.username.equals(login.username) &&
                 this.password.equals(login.password);
-    }
-
-    @Override
-    public int hashCode() {
-        return Objects.hash(username, password);
     }
 
     public Login(String username) {
